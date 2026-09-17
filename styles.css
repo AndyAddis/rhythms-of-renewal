@@ -87,8 +87,6 @@ p, li { font-size: clamp(.92rem, 1.65vw, 2rem); line-height: 1.35; }
 .point.active { display: grid; }
 .point-kicker { color: var(--cyan); font-weight: 900; letter-spacing: .2em; font-size: clamp(1rem, 1.8vw, 2.1rem); margin-bottom: -4%; }
 .point h2 { font-size: clamp(3.5rem, 7.8vw, 9rem); line-height: .93; margin: 0; }
-.slide-number-display { color: var(--cyan); margin-top: -3%; font-weight: 800; letter-spacing: .25em; }
-
 .scripture { padding: 7.4% 10.5% 8%; }
 .scripture-wrap { height: 100%; display: flex; flex-direction: column; justify-content: center; }
 .reference { color: var(--orange); font-size: clamp(1rem, 1.55vw, 1.9rem); font-weight: 900; letter-spacing: .16em; margin-bottom: 1.4%; }
@@ -99,8 +97,16 @@ sup { color: var(--orange); font-weight: 900; }
 
 .rhythm { display: none; grid-template-columns: 44% 1fr; gap: 5%; align-items: center; }
 .rhythm.active { display: grid; }
-.rhythm-visual { display: grid; place-items: center; }
+.rhythm-visual { position: relative; display: grid; place-items: center; }
 .rhythm-visual img { width: 94%; max-height: 64vh; object-fit: contain; filter: drop-shadow(0 1.3rem 2rem rgba(0,0,0,.35)); border-radius: 1.2%; }
+.ring-labels { position: absolute; inset: 12% 4% 14% 47%; pointer-events: none; }
+.ring-label { --leader: 24%; position: absolute; left: 30%; display: flex; align-items: center; gap: .45em; min-width: 7.8em; padding: .28em .55em .28em .3em; color: var(--white); background: rgba(6,18,38,.88); border-left: .32em solid var(--ring-color); font-size: clamp(.6rem, 1.05vw, 1.25rem); font-weight: 850; letter-spacing: .03em; line-height: 1; box-shadow: 0 .3em .8em rgba(0,0,0,.28); }
+.ring-label::before { content: ""; position: absolute; right: 100%; top: 50%; width: var(--leader); height: 2px; background: var(--ring-color); transform: translateY(-50%); }
+.ring-label b { display: grid; place-items: center; width: 1.6em; aspect-ratio: 1; color: var(--navy); background: var(--ring-color); font-size: .9em; }
+.ring-label.annual { --ring-color: #ff9b00; --leader: 18%; top: 7%; }
+.ring-label.regular { --ring-color: #9fcd34; --leader: 30%; top: 33%; }
+.ring-label.weekly { --ring-color: #36a9e1; --leader: 43%; top: 58%; }
+.ring-label.daily { --ring-color: #62d51f; --leader: 57%; top: 79%; }
 .rhythm-copy { padding-right: 4%; }
 .rhythm-copy .eyebrow, .resources .eyebrow { color: var(--cyan); font-weight: 900; letter-spacing: .14em; font-size: clamp(.85rem, 1.35vw, 1.6rem); }
 .rhythm-copy h2 { font-size: clamp(2.2rem, 4.6vw, 5.5rem); margin-bottom: 5%; }
